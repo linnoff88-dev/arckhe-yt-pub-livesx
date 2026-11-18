@@ -1,8 +1,14 @@
-# yt-pub-livesx
+﻿# yt-pub-livesx
 
-**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+<div align="center">
+  <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
+  <p><strong>Arckhé AI</strong></p>
+</div>
 
-![YouTube Live Clips — Fabrica de Videos](assets/banner.jpg)
+
+**ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
+
+![YouTube Live Clips â€” Fabrica de Videos](assets/banner.jpg)
 
 Pipeline automatizado para cortar lives do YouTube em clips por topico e publicar em outro canal.
 
@@ -12,7 +18,7 @@ Pipeline automatizado para cortar lives do YouTube em clips por topico e publica
 ## Fluxo
 
 ```
-YouTube (lives do canal origem) → Transcricao → Analise IA → Corte (FFmpeg) → Thumbnail (IA) → Publicacao (canal destino)
+YouTube (lives do canal origem) â†’ Transcricao â†’ Analise IA â†’ Corte (FFmpeg) â†’ Thumbnail (IA) â†’ Publicacao (canal destino)
 ```
 
 1. **Sincroniza** lives do canal de origem via YouTube Data API
@@ -24,11 +30,11 @@ YouTube (lives do canal origem) → Transcricao → Analise IA → Corte (FFmpeg
 
 ## Modos de entrada
 
-Alem do fluxo principal (cortar lives → gerar clips → publicar), o pipeline aceita mais duas fontes de video:
+Alem do fluxo principal (cortar lives â†’ gerar clips â†’ publicar), o pipeline aceita mais duas fontes de video:
 
-1. **Lives do YouTube** → transcricao → analise IA → corte (FFmpeg) → thumbnail → publicacao
-2. **Import de videos** → pasta `imports/` vira fila do pipeline → thumbnail → publicacao
-3. **Sync TikTok → YouTube** → scan de canais TikTok → download → fila do pipeline → publicacao no canal YouTube de destino
+1. **Lives do YouTube** â†’ transcricao â†’ analise IA â†’ corte (FFmpeg) â†’ thumbnail â†’ publicacao
+2. **Import de videos** â†’ pasta `imports/` vira fila do pipeline â†’ thumbnail â†’ publicacao
+3. **Sync TikTok â†’ YouTube** â†’ scan de canais TikTok â†’ download â†’ fila do pipeline â†’ publicacao no canal YouTube de destino
 
 ### Import com metadados prontos (`imports/<lote>/manifest.json`)
 
@@ -38,9 +44,9 @@ descricao por IA, capa pelo `thumb_mode` da config).
 
 ```
 imports/stay-kling/
-├── stay-kling.mp4      # nome do arquivo = filename no manifesto
-├── capa-yt.jpg
-└── manifest.json
+â”œâ”€â”€ stay-kling.mp4      # nome do arquivo = filename no manifesto
+â”œâ”€â”€ capa-yt.jpg
+â””â”€â”€ manifest.json
 ```
 
 ```json
@@ -69,47 +75,47 @@ imports/stay-kling/
 
 Regras da capa: mesma pasta do MP4, `.jpg`/`.jpeg`/`.png` (PNG e convertido para JPEG,
 porque o `thumbnails.set` exige `image/jpeg`), maximo 2 MB. Arquivo faltando ou invalido
-gera log e cai no fluxo normal — **nunca quebra o lote**.
+gera log e cai no fluxo normal â€” **nunca quebra o lote**.
 
 Nao e preciso aplicar faststart no MP4: o `_ensure_faststart` roda em todo video importado.
 
-`clips` aceita varios itens — cada um com seu proprio titulo, descricao, tags e capa.
+`clips` aceita varios itens â€” cada um com seu proprio titulo, descricao, tags e capa.
 
 ## Estrutura
 
 ```
 yt-pub-livesx/
-├── config/                    # Configuracao isolada do projeto
-│   ├── .env                   # Variaveis de ambiente (nao vai pro git)
-│   ├── client_secret.json     # Credenciais OAuth (nao vai pro git)
-│   ├── credentials.enc        # Tokens encriptados (nao vai pro git)
-│   ├── .encryption_key        # Chave AES-GCM (nao vai pro git)
-│   ├── prompt_cortes.txt      # Prompt IA para analise de topicos
-│   ├── prompt_pub.txt         # Prompt IA para refinar titulo/descricao
-│   └── prompt_thumb.txt       # Prompt IA para gerar thumbnails
-├── data/
-│   └── lives.db               # Banco SQLite local (nao vai pro git)
-├── dashboard/
-│   ├── server.py              # Backend API (Python HTTP server)
-│   └── index.html             # Frontend SPA (vanilla JS)
-├── scripts/
-│   ├── yt-auth                # Autenticacao OAuth standalone
-│   ├── yt-clip                # Pipeline: transcricao → analise → corte
-│   ├── yt-publish             # Upload de video para YouTube
-│   ├── yt-thumbnail           # Gera thumbnails com IA
-│   ├── setup-db               # Cria banco SQLite (com --import migra do Sheets)
-│   └── sync-instances         # Sync codigo para outras instancias
-├── systemd/
-│   ├── yt-dashboard.service   # Service systemd (porta 8091)
-│   └── yt-scheduler.service   # Service systemd scheduler
-├── db.py                      # Modulo SQLite (CONFIG, LIVES, PUBLICADOS)
-├── scheduler.py               # Scheduler automatico
-├── docker-compose.yml         # Docker (porta 8091)
-├── Dockerfile
-├── requirements.txt
-├── setup.sh
-└── docs/
-    └── SETUP-CANAL-DESTINO.md # Documentacao completa do setup
+â”œâ”€â”€ config/                    # Configuracao isolada do projeto
+â”‚   â”œâ”€â”€ .env                   # Variaveis de ambiente (nao vai pro git)
+â”‚   â”œâ”€â”€ client_secret.json     # Credenciais OAuth (nao vai pro git)
+â”‚   â”œâ”€â”€ credentials.enc        # Tokens encriptados (nao vai pro git)
+â”‚   â”œâ”€â”€ .encryption_key        # Chave AES-GCM (nao vai pro git)
+â”‚   â”œâ”€â”€ prompt_cortes.txt      # Prompt IA para analise de topicos
+â”‚   â”œâ”€â”€ prompt_pub.txt         # Prompt IA para refinar titulo/descricao
+â”‚   â””â”€â”€ prompt_thumb.txt       # Prompt IA para gerar thumbnails
+â”œâ”€â”€ data/
+â”‚   â””â”€â”€ lives.db               # Banco SQLite local (nao vai pro git)
+â”œâ”€â”€ dashboard/
+â”‚   â”œâ”€â”€ server.py              # Backend API (Python HTTP server)
+â”‚   â””â”€â”€ index.html             # Frontend SPA (vanilla JS)
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ yt-auth                # Autenticacao OAuth standalone
+â”‚   â”œâ”€â”€ yt-clip                # Pipeline: transcricao â†’ analise â†’ corte
+â”‚   â”œâ”€â”€ yt-publish             # Upload de video para YouTube
+â”‚   â”œâ”€â”€ yt-thumbnail           # Gera thumbnails com IA
+â”‚   â”œâ”€â”€ setup-db               # Cria banco SQLite (com --import migra do Sheets)
+â”‚   â””â”€â”€ sync-instances         # Sync codigo para outras instancias
+â”œâ”€â”€ systemd/
+â”‚   â”œâ”€â”€ yt-dashboard.service   # Service systemd (porta 8091)
+â”‚   â””â”€â”€ yt-scheduler.service   # Service systemd scheduler
+â”œâ”€â”€ db.py                      # Modulo SQLite (CONFIG, LIVES, PUBLICADOS)
+â”œâ”€â”€ scheduler.py               # Scheduler automatico
+â”œâ”€â”€ docker-compose.yml         # Docker (porta 8091)
+â”œâ”€â”€ Dockerfile
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ setup.sh
+â””â”€â”€ docs/
+    â””â”€â”€ SETUP-CANAL-DESTINO.md # Documentacao completa do setup
 ```
 
 ## Requisitos
@@ -127,19 +133,19 @@ O sistema e composto por **1 master-dashboard** + **N instancias** (1 por canal)
 
 ```
 ~/projetos/
-├── yt-pub-livesx/              ← TEMPLATE (este repo, sem credenciais)
-│   ├── master-dashboard/       ← agrega todas as instancias
-│   ├── scripts/setup-system    ← Parte 1: sobe master
-│   └── scripts/setup-canal     ← Parte 2: cria instancia nova
-│
-├── yt-pub-lives1/              ← Canal 1 (copia do template)
-│   ├── config/.env             ← credenciais GCP do canal 1
-│   ├── config/credentials.enc  ← OAuth tokens do canal 1
-│   ├── data/lives.db           ← SQLite isolado
-│   └── lives/                  ← videos baixados
-│
-├── yt-pub-livesx/              ← Canal 2 (idem)
-└── yt-pub-lives7/              ← Canal N
+â”œâ”€â”€ yt-pub-livesx/              â† TEMPLATE (este repo, sem credenciais)
+â”‚   â”œâ”€â”€ master-dashboard/       â† agrega todas as instancias
+â”‚   â”œâ”€â”€ scripts/setup-system    â† Parte 1: sobe master
+â”‚   â””â”€â”€ scripts/setup-canal     â† Parte 2: cria instancia nova
+â”‚
+â”œâ”€â”€ yt-pub-lives1/              â† Canal 1 (copia do template)
+â”‚   â”œâ”€â”€ config/.env             â† credenciais GCP do canal 1
+â”‚   â”œâ”€â”€ config/credentials.enc  â† OAuth tokens do canal 1
+â”‚   â”œâ”€â”€ data/lives.db           â† SQLite isolado
+â”‚   â””â”€â”€ lives/                  â† videos baixados
+â”‚
+â”œâ”€â”€ yt-pub-livesx/              â† Canal 2 (idem)
+â””â”€â”€ yt-pub-lives7/              â† Canal N
 ```
 
 ### O que e compartilhado vs isolado
@@ -156,11 +162,11 @@ O sistema e composto por **1 master-dashboard** + **N instancias** (1 por canal)
 ### Servicos systemd (modelo final)
 
 ```
-yt-master-dashboard           → porta 8090 (agrega todos)
-yt-dashboard1 + yt-scheduler1 → porta 8091 (canal 1)
-yt-dashboard2 + yt-scheduler2 → porta 8092 (canal 2)
+yt-master-dashboard           â†’ porta 8090 (agrega todos)
+yt-dashboard1 + yt-scheduler1 â†’ porta 8091 (canal 1)
+yt-dashboard2 + yt-scheduler2 â†’ porta 8092 (canal 2)
 ...
-yt-dashboardN + yt-schedulerN → porta 809N (canal N)
+yt-dashboardN + yt-schedulerN â†’ porta 809N (canal N)
 ```
 
 Cada par `dashboard<N>` + `scheduler<N>` e **independente**: se um canal cai, os outros continuam. O master so consome as APIs HTTP de cada dashboard.
@@ -169,47 +175,47 @@ Cada par `dashboard<N>` + `scheduler<N>` e **independente**: se um canal cai, os
 
 ```
 YouTube (canal origem)
-    ↓ YouTube Data API v3
-scheduler<N>  ─→  baixa lives novas (yt-dlp)
-    ↓
+    â†“ YouTube Data API v3
+scheduler<N>  â”€â†’  baixa lives novas (yt-dlp)
+    â†“
     transcricao (legendas YouTube)
-    ↓
-    analise IA (Piramyd/Claude) → topicos + timestamps
-    ↓
+    â†“
+    analise IA (Piramyd/Claude) â†’ topicos + timestamps
+    â†“
     corte (FFmpeg)
-    ↓
+    â†“
     geracao thumbnail (IA ou local)
-    ↓
-    upload via OAuth → YouTube (canal destino)
-    ↓
-data/lives.db  ←  log local + status
-    ↑
-dashboard<N>   ←  UI de controle (porta 809N)
-    ↑
-master-dashboard ← agrega todos (porta 8090)
+    â†“
+    upload via OAuth â†’ YouTube (canal destino)
+    â†“
+data/lives.db  â†  log local + status
+    â†‘
+dashboard<N>   â†  UI de controle (porta 809N)
+    â†‘
+master-dashboard â† agrega todos (porta 8090)
 ```
 
 ### Por que 1 canal = 1 instancia?
 
-- **OAuth do YouTube e por usuario/canal** — nao da pra autenticar 2 canais no mesmo OAuth
-- **Cota da YouTube Data API e por projeto GCP** — separar projetos = cotas independentes
-- **Isolamento de falhas** — bug ou rate-limit num canal nao afeta os outros
-- **Sync de codigo opcional** — `scripts/sync-instances` propaga atualizacoes do template; cada instancia decide se entra
+- **OAuth do YouTube e por usuario/canal** â€” nao da pra autenticar 2 canais no mesmo OAuth
+- **Cota da YouTube Data API e por projeto GCP** â€” separar projetos = cotas independentes
+- **Isolamento de falhas** â€” bug ou rate-limit num canal nao afeta os outros
+- **Sync de codigo opcional** â€” `scripts/sync-instances` propaga atualizacoes do template; cada instancia decide se entra
 
 ## Instalacao
 
 A instalacao e dividida em **duas partes independentes**:
 
-- **Parte 1 — `setup-system`** (1x por maquina): sobe o master-dashboard
+- **Parte 1 â€” `setup-system`** (1x por maquina): sobe o master-dashboard
   na porta 8090 e prepara dependencias.
-- **Parte 2 — `setup-canal`** (1x por canal, inclusive o primeiro): cria
+- **Parte 2 â€” `setup-canal`** (1x por canal, inclusive o primeiro): cria
   uma nova instancia copiando este template.
 
-> Esta pasta (`yt-pub-livesx`) e o **template oficial** — nunca deve
+> Esta pasta (`yt-pub-livesx`) e o **template oficial** â€” nunca deve
 > conter `.env`, credenciais ou dados. Toda nova instancia e copia
 > dela.
 
-### Parte 1 — Setup do sistema
+### Parte 1 â€” Setup do sistema
 
 ```bash
 git clone <repo> yt-pub-livesx
@@ -225,7 +231,7 @@ O script:
 
 Apos terminar: `http://localhost:8090`
 
-### Parte 2 — Adicionar canal
+### Parte 2 â€” Adicionar canal
 
 ```bash
 ./scripts/setup-canal
@@ -235,15 +241,15 @@ Antes de rodar, tenha em maos:
 
 | Pergunta | Origem | Default |
 |---|---|---|
-| Nome da instancia | livre (ex: `yt-pub-lives7`) | — |
+| Nome da instancia | livre (ex: `yt-pub-lives7`) | â€” |
 | Numero da instancia (services) | extraido do nome se terminar em digito | proximo livre |
 | Porta do dashboard | livre na maquina | proxima livre 8091+ |
 | `YOUTUBE_CHANNEL_ID` (origem) | UC... do canal de onde vem as lives | INEMA TDS |
 | Handle do canal de destino | so doc | opcional |
-| `CLIENT_ID` / `CLIENT_SECRET` | GCP → OAuth Client ID (Desktop App) | — |
-| `API_KEY` | GCP → API Key (YouTube Data API v3) | — |
-| `GCP_PROJECT` | id do projeto GCP | — |
-| `PIRAMYD_API_KEY` | painel Piramyd | — |
+| `CLIENT_ID` / `CLIENT_SECRET` | GCP â†’ OAuth Client ID (Desktop App) | â€” |
+| `API_KEY` | GCP â†’ API Key (YouTube Data API v3) | â€” |
+| `GCP_PROJECT` | id do projeto GCP | â€” |
+| `PIRAMYD_API_KEY` | painel Piramyd | â€” |
 | Senha do dashboard | livre | `Inema2026$$$` |
 | Adicionar ao `sync-instances`? | s/N | N |
 
@@ -255,16 +261,16 @@ Cada instancia precisa de um **projeto Google Cloud proprio**:
 
 1. Acesse [Google Cloud Console](https://console.cloud.google.com) e crie um projeto (ex: `yt-pub-lives7`)
 2. Ative a API: **YouTube Data API v3**
-   - Menu: APIs & Services → Library → YouTube Data API v3 → Enable
+   - Menu: APIs & Services â†’ Library â†’ YouTube Data API v3 â†’ Enable
 3. Configure o **OAuth Consent Screen**:
    - Tipo: **External**, modo **Testing**
    - Scopes: `youtube`, `youtube.upload`
    - Test users: adicione o **email da conta dona do canal de destino**
-4. Crie credenciais **OAuth 2.0 → Desktop App**:
+4. Crie credenciais **OAuth 2.0 â†’ Desktop App**:
    - Authorized redirect URIs: `http://localhost:8888`
    - Para re-auth pelo master-dashboard: tambem `http://localhost:8090/api/auth/callback`
    - Anote `CLIENT_ID` e `CLIENT_SECRET`
-5. Crie uma **API Key** — anote o valor
+5. Crie uma **API Key** â€” anote o valor
 6. (Opcional) Verifique o telefone do canal em `youtube.com/verify`
    - Necessario para upload de **thumbnails customizadas**
 
@@ -281,7 +287,7 @@ Cada instancia precisa de um **projeto Google Cloud proprio**:
 9. Apos OAuth: sobe o **scheduler**
 10. (Opcional) registra a instancia em `scripts/sync-instances`
 
-URL final: `http://localhost:<porta>` — e ja aparece no master `http://localhost:8090`
+URL final: `http://localhost:<porta>` â€” e ja aparece no master `http://localhost:8090`
 
 ### Autenticacao OAuth (passo manual dentro do `setup-canal`)
 
@@ -298,14 +304,14 @@ O `yt-auth`:
 4. O callback salva os tokens encriptados em `config/credentials.enc`
 
 **Troubleshooting OAuth:**
-- *"Access blocked"*: clique em **Avancado → Ir para (app) (nao seguro)** (normal em modo Testing)
-- *"app has not completed verification"*: a conta nao esta como **test user** — adicione em GCP → OAuth Consent Screen → Test users
-- *"Unable to connect localhost:8888"*: o script `yt-auth` ja terminou — rode de novo e abra o link **enquanto ele estiver rodando**
+- *"Access blocked"*: clique em **Avancado â†’ Ir para (app) (nao seguro)** (normal em modo Testing)
+- *"app has not completed verification"*: a conta nao esta como **test user** â€” adicione em GCP â†’ OAuth Consent Screen â†’ Test users
+- *"Unable to connect localhost:8888"*: o script `yt-auth` ja terminou â€” rode de novo e abra o link **enquanto ele estiver rodando**
 - Varias contas no browser: use **aba anonima** ou adicione `&login_hint=email@gmail.com` ao link
 
 **Re-autenticacao pelo Master Dashboard (porta 8090):**
 
-O master usa `redirect_uri=http://localhost:8090/api/auth/callback`. Esse URI precisa estar **tambem** cadastrado em GCP → Credentials → OAuth Client ID da instancia → Authorized redirect URIs. Sem isso, a re-auth falha mesmo apos autorizar no Google.
+O master usa `redirect_uri=http://localhost:8090/api/auth/callback`. Esse URI precisa estar **tambem** cadastrado em GCP â†’ Credentials â†’ OAuth Client ID da instancia â†’ Authorized redirect URIs. Sem isso, a re-auth falha mesmo apos autorizar no Google.
 
 ### Banco de dados (SQLite local)
 
@@ -352,7 +358,7 @@ cd yt-pub-livesx
 ./setup.sh
 ```
 
-#### 4. Firewall — opcional mas recomendado
+#### 4. Firewall â€” opcional mas recomendado
 
 ```bash
 sudo ufw allow OpenSSH
@@ -381,7 +387,7 @@ ssh -L 8888:localhost:8888 user@vps
 GWS_CONFIG_DIR=~/projetos/yt-pub-lives1/config python3 ~/projetos/yt-pub-lives1/scripts/yt-auth
 ```
 
-Copie o link gerado, abra no **browser da sua maquina local**, autorize. O callback chega em `localhost:8888` local → via tunnel SSH → cai na VPS e salva os tokens encriptados.
+Copie o link gerado, abra no **browser da sua maquina local**, autorize. O callback chega em `localhost:8888` local â†’ via tunnel SSH â†’ cai na VPS e salva os tokens encriptados.
 
 #### 6. Verificar
 
@@ -395,9 +401,9 @@ journalctl --user -u yt-scheduler1 -f
 
 Salve regularmente **fora da VPS**:
 
-- `config/credentials.enc` — sem isso, precisa refazer OAuth
-- `config/.encryption_key` — sem essa chave, `credentials.enc` e inutil
-- `data/lives.db` — historico de lives processadas
+- `config/credentials.enc` â€” sem isso, precisa refazer OAuth
+- `config/.encryption_key` â€” sem essa chave, `credentials.enc` e inutil
+- `data/lives.db` â€” historico de lives processadas
 
 ```bash
 tar -czf backup-$(date +%F).tar.gz \
@@ -415,7 +421,7 @@ tar -czf backup-$(date +%F).tar.gz \
 | RAM | 2 GB | 4 GB |
 | Disco | 20 GB | 50+ GB (videos baixados ficam em `lives/`) |
 | Banda | 1 TB/mes | depende de quantos canais |
-| OS | Ubuntu 22.04+ / Debian 12+ | — |
+| OS | Ubuntu 22.04+ / Debian 12+ | â€” |
 
 > **Disco:** videos brutos ficam em `lives/` ate o pipeline cortar e publicar. Configure cleanup periodico ou o disco enche:
 > ```bash
@@ -441,14 +447,14 @@ Ou edite pelo dashboard na aba de configuracao.
 python3 dashboard/server.py [porta]    # padrao: 8091
 ```
 
-Acesse `http://localhost:8091` — ao abrir o browser pela primeira vez sera pedida a senha.
+Acesse `http://localhost:8091` â€” ao abrir o browser pela primeira vez sera pedida a senha.
 
 #### Autenticacao
 
 Todos os dashboards (master `:8090` e cada canal `:809N`) exigem senha para acesso.
 
 - **Senha default:** `Inema2026$$$`
-- **Configurada em:** `config/.env` → variavel `DASHBOARD_PASSWORD`
+- **Configurada em:** `config/.env` â†’ variavel `DASHBOARD_PASSWORD`
 - **Cookie de sessao** (`ds`) dura 30 dias; expira se o service reiniciar
 
 **Trocar a senha** (via curl ou pelo devtools do browser):
@@ -467,10 +473,10 @@ DASHBOARD_PASSWORD=Inema2026$$$
 ```
 E reiniciar o service: `systemctl --user restart yt-dashboard<N>`.
 
-> **TODO (seguranca — revisar):**
+> **TODO (seguranca â€” revisar):**
 > A implementacao atual e adequada para uso interno em VPS com SSH tunnel,
 > mas tem limitacoes que devem ser avaliadas antes de expor em rede aberta:
-> - Sem rate limiting em `/api/login` — suscetivel a brute force
+> - Sem rate limiting em `/api/login` â€” suscetivel a brute force
 > - Senha gravada em texto puro no `.env` (nao e hash)
 > - Sem TLS: cookie e senha trafegam em claro (risco em redes nao confiaveis)
 > - Sessions em memoria: restart do service = logout forcado de todos
@@ -511,7 +517,7 @@ systemctl --user enable --now yt-scheduler5 yt-dashboard5
 ### Multi-instancia
 
 **Convencao recomendada:** nome do projeto GCP = nome do canal de destino
-(facilita auditoria — voce vê na GCP Console qual canal cada projeto serve).
+(facilita auditoria â€” voce vÃª na GCP Console qual canal cada projeto serve).
 
 | Instancia | Porta | Scheduler | Dashboard | Canal Destino | GCP Project |
 |-----------|-------|-----------|-----------|---------------|-------------|
@@ -566,4 +572,11 @@ yt-publish video.mp4 --title "Titulo" --description "Desc" --privacy unlisted --
 
 ## Licenca
 
-Uso interno — INEMA TDS (@inematdsx)
+Uso interno â€” INEMA TDS (@inematdsx)
+
+---
+
+<div align="center">
+  <img src="capa/logo.svg" alt="Arckhé AI" height="32" />
+  <p><strong>Arckhé AI</strong></p>
+</div>
