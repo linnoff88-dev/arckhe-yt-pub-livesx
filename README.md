@@ -6,7 +6,7 @@
 </div>
 
 
-**ðŸ‡§ðŸ‡· [PortuguÃªs](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [EspaÃ±ol](README.es.md)**
+**ðŸ‡§ðŸ‡· [Português](README.md) Â· ðŸ‡ºðŸ‡¸ [English](README.en.md) Â· ðŸ‡ªðŸ‡¸ [Espaê±ol](README.es.md)**
 
 ![YouTube Live Clips â€” Fabrica de Videos](assets/banner.jpg)
 
@@ -517,7 +517,7 @@ systemctl --user enable --now yt-scheduler5 yt-dashboard5
 ### Multi-instancia
 
 **Convencao recomendada:** nome do projeto GCP = nome do canal de destino
-(facilita auditoria â€” voce vÃª na GCP Console qual canal cada projeto serve).
+(facilita auditoria â€” voce vê na GCP Console qual canal cada projeto serve).
 
 | Instancia | Porta | Scheduler | Dashboard | Canal Destino | GCP Project |
 |-----------|-------|-----------|-----------|---------------|-------------|

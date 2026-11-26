@@ -1,7 +1,7 @@
-# Import Worker — Especificação de Integração
+# Import Worker — Especificaçêo de Integraçêo
 
 Qualquer sistema externo (n8n, Make, scripts, outras instâncias) pode entregar clips
-para publicação automática no YouTube simplesmente copiando arquivos para a pasta `imports/`.
+para publicaçêo automática no YouTube simplesmente copiando arquivos para a pasta `imports/`.
 
 ---
 
@@ -10,7 +10,7 @@ para publicação automática no YouTube simplesmente copiando arquivos para a p
 ```
 yt-pub-lives<N>/
   imports/
-    nome-do-lote/          ← uma pasta = um lote de publicação
+    nome-do-lote/          ← uma pasta = um lote de publicaçêo
       clip_01_Titulo.mp4
       clip_02_Outro.mp4
       manifest.json        ← opcional, mas recomendado
@@ -33,7 +33,7 @@ yt-pub-lives<N>/
     {
       "filename":    "clip_01_Titulo.mp4",
       "title":       "Título do vídeo no YouTube",
-      "description": "Descrição completa do vídeo.",
+      "description": "Descriçêo completa do vídeo.",
       "tags":        ["tag1", "tag2", "tag3"]
     },
     {
@@ -48,54 +48,54 @@ yt-pub-lives<N>/
 
 ### Campos do manifest raiz
 
-| Campo        | Tipo   | Obrigatório | Descrição |
+| Campo        | Tipo   | Obrigatório | Descriçêo |
 |--------------|--------|-------------|-----------|
-| `titulo`     | string | não         | Nome do lote no dashboard. Default: nome da pasta |
-| `publish_at` | string | não         | Horário HH:MM para publicar (ex: `"14:00"`). Só respeitado se `import_fila_global=false` no config |
-| `privacy`    | string | não         | `public` \| `unlisted` \| `private`. Sobrescreve o config global deste lote |
-| `clips`      | array  | não         | Lista de metadados por arquivo. Se ausente, usa nomes dos arquivos |
+| `titulo`     | string | nêo         | Nome do lote no dashboard. Default: nome da pasta |
+| `publish_at` | string | nêo         | Horário HH:MM para publicar (ex: `"14:00"`). Só respeitado se `import_fila_global=false` no config |
+| `privacy`    | string | nêo         | `public` \| `unlisted` \| `private`. Sobrescreve o config global deste lote |
+| `clips`      | array  | nêo         | Lista de metadados por arquivo. Se ausente, usa nomes dos arquivos |
 
 ### Campos por clip
 
-| Campo         | Tipo         | Obrigatório | Descrição |
+| Campo         | Tipo         | Obrigatório | Descriçêo |
 |---------------|--------------|-------------|-----------|
 | `filename`    | string       | sim         | Nome exato do arquivo MP4 na mesma pasta |
-| `title`       | string       | não         | Título no YouTube. Default: nome do arquivo sem extensão |
-| `description` | string       | não         | Descrição. Se vazio e `import_gerar_descricao=true`, IA gera automaticamente |
-| `tags`        | array string | não         | Tags do vídeo |
+| `title`       | string       | nêo         | Título no YouTube. Default: nome do arquivo sem extensêo |
+| `description` | string       | nêo         | Descriçêo. Se vazio e `import_gerar_descricao=true`, IA gera automaticamente |
+| `tags`        | array string | nêo         | Tags do vídeo |
 
 ---
 
-## Sem manifest — comportamento padrão
+## Sem manifest — comportamento padrêo
 
-Se não houver `manifest.json`, o sistema:
+Se nêo houver `manifest.json`, o sistema:
 
 1. Usa todos os `.mp4` da pasta em ordem alfabética
-2. Título = nome do arquivo sem extensão e sem prefixo numérico
+2. Título = nome do arquivo sem extensêo e sem prefixo numérico
    - `clip_01_Como usar n8n.mp4` → `"Como usar n8n"`
    - `03_Tutorial basico.mp4` → `"Tutorial basico"`
-3. Descrição = vazia (ou gerada por IA se `import_gerar_descricao=true`)
+3. Descriçêo = vazia (ou gerada por IA se `import_gerar_descricao=true`)
 4. Tags = vazia
 5. Privacy = valor global do config
 
 ---
 
-## Config do sistema (painel de configuração)
+## Config do sistema (painel de configuraçêo)
 
-| Chave                    | Valores         | Default   | Descrição |
+| Chave                    | Valores         | Default   | Descriçêo |
 |--------------------------|-----------------|-----------|-----------|
-| `import_auto`            | `true`\|`false` | `false`   | Verificação horária automática da pasta imports/ |
-| `import_gerar_descricao` | `true`\|`false` | `false`   | Gerar descrição via IA quando ausente no manifest |
+| `import_auto`            | `true`\|`false` | `false`   | Verificaçêo horária automática da pasta imports/ |
+| `import_gerar_descricao` | `true`\|`false` | `false`   | Gerar descriçêo via IA quando ausente no manifest |
 | `import_fila_global`     | `true`\|`false` | `true`    | `true` = entra na fila normal (`pub_horarios`); `false` = respeita `publish_at` do manifest |
 
 ---
 
-## Quando os clips são publicados
+## Quando os clips sêo publicados
 
 ### Modo fila global (`import_fila_global=true`)
 
 Os clips importados entram na **mesma fila** que os clips cortados das lives.
-São publicados conforme o agendamento `pub_horarios` do config.
+Sêo publicados conforme o agendamento `pub_horarios` do config.
 
 ```
 imports/lote/ → processado → fila global → pub_horarios → YouTube
@@ -108,11 +108,11 @@ Se o horário atual for menor que `publish_at`, o lote aguarda.
 
 ```
 manifest.json: { "publish_at": "14:00" }
-→ clips não publicados antes das 14:00
-→ a partir das 14:00: entra na próxima rodada de publicação
+→ clips nêo publicados antes das 14:00
+→ a partir das 14:00: entra na próxima rodada de publicaçêo
 ```
 
-Se `publish_at` não estiver definido no manifest, o lote também entra na fila global.
+Se `publish_at` nêo estiver definido no manifest, o lote também entra na fila global.
 
 ---
 
@@ -149,19 +149,19 @@ Content-Type: application/json
 
 | `action`    | O que faz |
 |-------------|-----------|
-| `imports`   | Remove pastas residuais em `imports/` (não processadas) |
+| `imports`   | Remove pastas residuais em `imports/` (nêo processadas) |
 | `clips`     | Remove a pasta `clips/` das lives **totalmente publicadas** |
 | `clips_all` | Remove a pasta `clips/` de **todas** as lives (cuidado!) |
 
 ---
 
-## Exemplo de integração n8n/Make
+## Exemplo de integraçêo n8n/Make
 
 1. Gerar MP4 dos clips via pipeline de corte externo
 2. Criar `manifest.json` com títulos, descrições e `publish_at`
 3. Copiar tudo para `imports/nome-do-lote/` via SSH/SCP ou volume compartilhado
 4. Chamar `POST /api/import/scan` para processar imediatamente
-   (ou aguardar a verificação horária automática se `import_auto=true`)
+   (ou aguardar a verificaçêo horária automática se `import_auto=true`)
 
 ---
 

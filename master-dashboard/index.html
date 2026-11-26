@@ -829,7 +829,7 @@ function switchChart(instId, period) {
 }
 
 function openModal(id, event) {
-  // Não abrir modal se clicou em botão ou link
+  // Nêo abrir modal se clicou em botêo ou link
   if (event.target.closest('button') || event.target.closest('a')) return;
   const inst = data.instances.find(i => i.id === id);
   if (!inst) return;

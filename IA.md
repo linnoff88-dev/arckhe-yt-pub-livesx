@@ -1,6 +1,6 @@
 # Motores independentes por etapa
 
-O canal usa `scripts/ia.yaml`. Edite tipo, motor, modelo e esforco de analise_cortes ou prompt_capa. Exemplos com # incluem Claude/Codex por assinatura e APIs Anthropic/OpenAI/OpenRouter, desativadas até autorização específica. A etapa capa exige Codex assinatura/image_gen. As opções antigas do dashboard de IA não substituem este arquivo; claude-api é alias histórico para configuração local, não API. Não há fallback pago. Nenhuma credencial ou banco é copiado entre canais.
+O canal usa `scripts/ia.yaml`. Edite tipo, motor, modelo e esforco de analise_cortes ou prompt_capa. Exemplos com # incluem Claude/Codex por assinatura e APIs Anthropic/OpenAI/OpenRouter, desativadas até autorizaçêo específica. A etapa capa exige Codex assinatura/image_gen. As opções antigas do dashboard de IA nêo substituem este arquivo; claude-api é alias histórico para configuraçêo local, nêo API. Nêo há fallback pago. Nenhuma credencial ou banco é copiado entre canais.
 
 ```bash
 python3 scripts/ia_motor.py ver
@@ -8,4 +8,4 @@ python3 scripts/ia_motor.py configurar analise_cortes --tipo assinatura --motor 
 python3 scripts/ia_motor.py configurar analise_cortes --tipo assinatura --motor codex --modelo gpt-6.1-sol --esforco medium
 ```
 
-Cada nova execução dos scripts lê a configuração; os schedulers não precisam reiniciar para adotar esta mudança nos subprocessos. Tradução continua central. O sincronizador deve copiar ia_motor.py e analise_cortes.py, preservando ia.yaml local de cada canal. Não copiar config/, data/, .env ou credentials.enc. Se Codex falhar, tenta inemaimg/FLUX local na fila GPU; se os dois falharem, preserva o gradiente com texto. Nenhuma API alternativa paga é chamada.
+Cada nova execuçêo dos scripts lê a configuraçêo; os schedulers nêo precisam reiniciar para adotar esta mudança nos subprocessos. Traduçêo continua central. O sincronizador deve copiar ia_motor.py e analise_cortes.py, preservando ia.yaml local de cada canal. Nêo copiar config/, data/, .env ou credentials.enc. Se Codex falhar, tenta inemaimg/FLUX local na fila GPU; se os dois falharem, preserva o gradiente com texto. Nenhuma API alternativa paga é chamada.

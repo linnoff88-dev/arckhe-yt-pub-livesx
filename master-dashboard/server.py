@@ -33,7 +33,7 @@ if os.path.exists(ENV_FILE):
                 key, val = line.split('=', 1)
                 os.environ.setdefault(key, val)
 
-# Estado de validação gmail extras
+# Estado de validaçêo gmail extras
 extra_validations_file = os.path.join(DASHBOARD_DIR, 'extra_validations.json')
 def load_extra_validations():
     try:
@@ -353,7 +353,7 @@ def get_db_stats(instance_path):
                     return t
             return times[0] + ' (amanha)' if times else None
 
-        # Previsão publicações por dia
+        # Previsêo publicações por dia
         pub_list = [h.strip() for h in pub_horarios.split(',') if h.strip()]
         pub_previsao_dia = len(pub_list) * int(pub_max)
         corte_list = [h.strip() for h in corte_horarios.split(',') if h.strip()]
@@ -732,9 +732,9 @@ def heartbeat_loop():
                     with heartbeat_lock:
                         heartbeat_data['telegram_last_alert'] = now.strftime('%Y-%m-%d %H:%M:%S')
             else:
-                # Tudo OK — se havia alerta anterior, notifica recuperação
+                # Tudo OK — se havia alerta anterior, notifica recuperaçêo
                 if last_telegram_alert is not None:
-                    msg = f"✅ <b>YT-Pub Monitor</b>\n\nTodos os 7 serviços estão rodando ({now.strftime('%H:%M')})"
+                    msg = f"✅ <b>YT-Pub Monitor</b>\n\nTodos os 7 serviços estêo rodando ({now.strftime('%H:%M')})"
                     send_telegram(msg)
                     last_telegram_alert = None
 
@@ -934,7 +934,7 @@ class Handler(SimpleHTTPRequestHandler):
             # /api/auth/extra?email=xxx — abre OAuth com login_hint para qualquer email
             qs = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
             email = qs.get('email', [''])[0]
-            # Usa CLIENT_ID do lives1 como padrão
+            # Usa CLIENT_ID do lives1 como padrêo
             inst = INSTANCES[0]
             config_dir = os.path.join(inst['path'], 'config')
             env = {}
@@ -1465,7 +1465,7 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 def main():
-    # Primeira verificação imediata
+    # Primeira verificaçêo imediata
     log('Master Dashboard starting...')
     instances = check_all()
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
