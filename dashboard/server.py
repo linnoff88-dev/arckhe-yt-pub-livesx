@@ -33,7 +33,7 @@ sys.path.insert(0, PROJECT_ROOT)
 import db
 import secrets as _sec
 
-_DASHBOARD_PASSWORD = os.environ.get('DASHBOARD_PASSWORD', 'Inema2026$$$')
+_DASHBOARD_PASSWORD = os.environ.get('DASHBOARD_PASSWORD', 'ARCKHÉ2026$$$')
 _VALID_SESSIONS = set()
 
 _LOGIN_HTML = '''<!doctype html>
@@ -527,12 +527,12 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                     checks['api_thumb'] = {'ok': False,
                                            'detail': 'sem AGNES_API_KEY (~/projetos/agnes-nei/.env)'}
             elif img_provider == 'local':
-                url = cfg.get('inemaimg_url', '') or 'http://localhost:8000'
+                url = cfg.get('ARCKHÉimg_url', '') or 'http://localhost:8000'
                 try:
                     urllib.request.urlopen(url, timeout=5)
-                    checks['api_thumb'] = {'ok': True, 'detail': f'inemaimg ok ({url})'}
+                    checks['api_thumb'] = {'ok': True, 'detail': f'ARCKHÉimg ok ({url})'}
                 except Exception as e:
-                    checks['api_thumb'] = {'ok': False, 'detail': f'inemaimg down: {str(e)[:60]}'}
+                    checks['api_thumb'] = {'ok': False, 'detail': f'ARCKHÉimg down: {str(e)[:60]}'}
             else:
                 checks['api_thumb'] = {'ok': True, 'detail': f'{img_provider} (sem teste)'}
         except Exception as e:

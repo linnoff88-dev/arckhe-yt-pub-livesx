@@ -8,4 +8,4 @@ python3 scripts/ia_motor.py configurar analise_cortes --tipo assinatura --motor 
 python3 scripts/ia_motor.py configurar analise_cortes --tipo assinatura --motor codex --modelo gpt-6.1-sol --esforco medium
 ```
 
-Cada nova execuçêo dos scripts lê a configuraçêo; os schedulers nêo precisam reiniciar para adotar esta mudança nos subprocessos. Traduçêo continua central. O sincronizador deve copiar ia_motor.py e analise_cortes.py, preservando ia.yaml local de cada canal. Nêo copiar config/, data/, .env ou credentials.enc. Se Codex falhar, tenta inemaimg/FLUX local na fila GPU; se os dois falharem, preserva o gradiente com texto. Nenhuma API alternativa paga é chamada.
+Cada nova execuçêo dos scripts lê a configuraçêo; os schedulers nêo precisam reiniciar para adotar esta mudança nos subprocessos. Traduçêo continua central. O sincronizador deve copiar ia_motor.py e analise_cortes.py, preservando ia.yaml local de cada canal. Nêo copiar config/, data/, .env ou credentials.enc. Se Codex falhar, tenta ARCKHÉimg/FLUX local na fila GPU; se os dois falharem, preserva o gradiente com texto. Nenhuma API alternativa paga é chamada.

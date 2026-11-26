@@ -47,7 +47,7 @@ ss -ltn 2>/dev/null | grep -q ":$PORTA " && {
 # ============= B. YouTube =============
 read -rp "YOUTUBE_CHANNEL_ID origem [UC2QbQDyPKuHk93dwo5iq3Sw]: " ORIG
 ORIG=${ORIG:-UC2QbQDyPKuHk93dwo5iq3Sw}
-read -rp "Handle do canal de destino (opcional, ex: @InemaTIA): " DEST_HANDLE
+read -rp "Handle do canal de destino (opcional, ex: @ARCKHÉTIA): " DEST_HANDLE
 
 # ============= C. Google Cloud =============
 echo ""
@@ -67,8 +67,8 @@ read -rp "GCP_PROJECT: " GCP_PROJECT
 
 # ============= E. Senha do dashboard =============
 echo ""
-read -rp "Senha do dashboard [Inema2026\$\$\$]: " DASHBOARD_PASSWORD
-[ -z "$DASHBOARD_PASSWORD" ] && DASHBOARD_PASSWORD='Inema2026$$$'
+read -rp "Senha do dashboard [ARCKHÉ2026\$\$\$]: " DASHBOARD_PASSWORD
+[ -z "$DASHBOARD_PASSWORD" ] && DASHBOARD_PASSWORD='ARCKHÉ2026$$$'
 
 # ============= F. Operacao =============
 read -rp "Adicionar ao sync-instances do template? [s/N]: " SYNC

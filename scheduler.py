@@ -431,9 +431,9 @@ def handle_thumbnail(video_id, title, description, config, thumb_override=None):
             google_img_key = config.get('google_image_api_key', '')
             if google_img_key:
                 os.environ['GOOGLE_IMAGE_API_KEY'] = google_img_key
-            inemaimg_url = config.get('inemaimg_url', '')
-            if inemaimg_url:
-                os.environ['INEMAIMG_URL'] = inemaimg_url
+            ARCKHÉimg_url = config.get('ARCKHÉimg_url', '')
+            if ARCKHÉimg_url:
+                os.environ['ARCKHÉIMG_URL'] = ARCKHÉimg_url
             google_img_model = config.get('google_image_model', '')
             if google_img_model:
                 os.environ['GOOGLE_IMAGE_MODEL'] = google_img_model
@@ -912,8 +912,8 @@ def enrich_live_with_ai(video_id, data_live, duracao_min, transcript_text, confi
 
 
 def _titulo_generico(live):
-    """Live sem titulo de verdade: vazio ou o generico 'INEMA'."""
-    return (live.get('titulo', '') or '').strip().upper() in ('', 'INEMA')
+    """Live sem titulo de verdade: vazio ou o generico 'ARCKHÉ'."""
+    return (live.get('titulo', '') or '').strip().upper() in ('', 'ARCKHÉ')
 
 
 DESC_OK_FILE = os.path.join(LIVES_DIR, 'desc_ok.json')
@@ -1623,7 +1623,7 @@ def main():
             if not tiktok_pub_match and last_executed.get('tiktok_pub'):
                 last_executed['tiktok_pub'] = None
 
-            # --- Enrich lives (titulo generico INEMA → titulo + desc + thumb) ---
+            # --- Enrich lives (titulo generico ARCKHÉ → titulo + desc + thumb) ---
             enrich_paused = config.get('pipeline_enrich_paused', 'false') == 'true'
             enrich_auto = config.get('enrich_auto', 'false') == 'true'
             enrich_horarios = config.get('enrich_horarios', '')

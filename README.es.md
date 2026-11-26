@@ -6,8 +6,8 @@
 
 Pipeline automatizado para recortar transmisiones en vivo de YouTube en clips por tema y publicarlos en otro canal.
 
-**Canal de origen** (transmisiones en vivo): [INEMA TDS](https://www.youtube.com/@inematdsx) (`UC2QbQDyPKuHk93dwo5iq3Sw`)
-**Canal de destino** (clips): [INEMA TIA](https://www.youtube.com/@InemaTIA) (`UCavuQHkxBSAZbzRoOm6Gq4g`)
+**Canal de origen** (transmisiones en vivo): [ARCKHÉ TDS](https://www.youtube.com/@linnoff88-devx) (`UC2QbQDyPKuHk93dwo5iq3Sw`)
+**Canal de destino** (clips): [ARCKHÉ TIA](https://www.youtube.com/@ARCKHÉTIA) (`UCavuQHkxBSAZbzRoOm6Gq4g`)
 
 ## Flujo
 
@@ -51,7 +51,7 @@ imports/stay-kling/
       "filename":    "stay-kling.mp4",
       "title":       "Stay",
       "description": "Paragrafo 1...\n\nParagrafo 2...",
-      "tags":        ["cinematic", "power ballad"],
+      "tags":        ["cARCKHÉtic", "power ballad"],
       "thumbnail":   "capa-yt.jpg"
     }
   ]
@@ -238,13 +238,13 @@ Antes de ejecutarlo, ten a mano:
 | Nombre de la instancia | libre (ej.: `yt-pub-lives7`) | — |
 | Número de la instancia (services) | se extrae del nombre si termina en un dígito | siguiente disponible |
 | Puerto del dashboard | libre en la máquina | siguiente disponible 8091+ |
-| `YOUTUBE_CHANNEL_ID` (origen) | UC... del canal del que provienen las transmisiones en vivo | INEMA TDS |
+| `YOUTUBE_CHANNEL_ID` (origen) | UC... del canal del que provienen las transmisiones en vivo | ARCKHÉ TDS |
 | Handle del canal de destino | solo documentación | opcional |
 | `CLIENT_ID` / `CLIENT_SECRET` | GCP → OAuth Client ID (Desktop App) | — |
 | `API_KEY` | GCP → API Key (YouTube Data API v3) | — |
 | `GCP_PROJECT` | id del proyecto GCP | — |
 | `PIRAMYD_API_KEY` | panel de Piramyd | — |
-| Contraseña del dashboard | libre | `Inema2026$$$` |
+| Contraseña del dashboard | libre | `ARCKHÉ2026$$$` |
 | ¿Agregar a `sync-instances`? | s/N | N |
 
 > **ENTER en cualquier pregunta con `[default]` acepta el valor predeterminado mostrado.**
@@ -347,7 +347,7 @@ Sin esto, todos los servicios `--user` se detienen cuando te desconectas de SSH.
 
 ```bash
 mkdir -p ~/projetos && cd ~/projetos
-git clone https://github.com/inematds/yt-pub-livesx.git
+git clone https://github.com/linnoff88-dev/yt-pub-livesx.git
 cd yt-pub-livesx
 ./setup.sh
 ```
@@ -447,7 +447,7 @@ Accede a `http://localhost:8091` — la primera vez que abras el navegador, se t
 
 Todos los dashboards (el master `:8090` y cada canal `:809N`) requieren contraseña para acceder.
 
-- **Contraseña predeterminada:** `Inema2026$$$`
+- **Contraseña predeterminada:** `ARCKHÉ2026$$$`
 - **Configurada en:** `config/.env` → variable `DASHBOARD_PASSWORD`
 - **La cookie de sesión** (`ds`) dura 30 días; vence si se reinicia el servicio
 
@@ -456,14 +456,14 @@ Todos los dashboards (el master `:8090` y cada canal `:809N`) requieren contrase
 curl -X POST http://localhost:8091/api/config/password \
   -b "ds=SEU_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"current":"Inema2026$$$","new":"NovaSenha"}'
+  -d '{"current":"ARCKHÉ2026$$$","new":"NovaSenha"}'
 ```
 
 El token `ds` aparece en las cookies del navegador después de iniciar sesión. El cambio invalida todas las sesiones activas (hay que volver a iniciar sesión).
 
 **Instancias existentes** (creadas antes de esta versión): agrega manualmente a `config/.env`:
 ```
-DASHBOARD_PASSWORD=Inema2026$$$
+DASHBOARD_PASSWORD=ARCKHÉ2026$$$
 ```
 Y reinicia el servicio: `systemctl --user restart yt-dashboard<N>`.
 
@@ -515,12 +515,12 @@ systemctl --user enable --now yt-scheduler5 yt-dashboard5
 
 | Instancia | Puerto | Scheduler | Dashboard | Canal de destino | GCP Project |
 |-----------|-------|-----------|-----------|---------------|-------------|
-| lives1 | 8091 | yt-scheduler1 | yt-dashboard1 | INEMA TDS | inema-tds |
-| lives2 | 8092 | yt-scheduler2 | yt-dashboard2 | INEMA TIA | inema-tia |
-| lives3 | 8093 | yt-scheduler3 | yt-dashboard3 | INEMA TDS | inema-tds-2 |
-| lives4 | 8094 | yt-scheduler4 | yt-dashboard4 | INEMA Tec | inema-tec |
-| lives5 | 8095 | yt-scheduler5 | yt-dashboard5 | INEMA PROMPTS | inema-prompts |
-| lives6 | 8096 | yt-scheduler6 | yt-dashboard6 | INEMA Robot | inema-robot |
+| lives1 | 8091 | yt-scheduler1 | yt-dashboard1 | ARCKHÉ TDS | ARCKHÉ-tds |
+| lives2 | 8092 | yt-scheduler2 | yt-dashboard2 | ARCKHÉ TIA | ARCKHÉ-tia |
+| lives3 | 8093 | yt-scheduler3 | yt-dashboard3 | ARCKHÉ TDS | ARCKHÉ-tds-2 |
+| lives4 | 8094 | yt-scheduler4 | yt-dashboard4 | ARCKHÉ Tec | ARCKHÉ-tec |
+| lives5 | 8095 | yt-scheduler5 | yt-dashboard5 | ARCKHÉ PROMPTS | ARCKHÉ-prompts |
+| lives6 | 8096 | yt-scheduler6 | yt-dashboard6 | ARCKHÉ Robot | ARCKHÉ-robot |
 
 **Sincronización de código** (`yt-pub-livesx` es la plantilla de origen):
 ```bash
@@ -566,4 +566,4 @@ yt-publish video.mp4 --title "Titulo" --description "Desc" --privacy unlisted --
 
 ## Licencia
 
-Uso interno — INEMA TDS (@inematdsx)
+Uso interno — ARCKHÉ TDS (@linnoff88-devx)

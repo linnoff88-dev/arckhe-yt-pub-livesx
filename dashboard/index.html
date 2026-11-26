@@ -706,7 +706,7 @@
 
 <div class="container">
   <header>
-    <h1><span>INEMA</span> Lives & Clips <small style="font-size:0.5em;color:var(--muted)">- <span id="instanceName"></span> <a href="#" onclick="openModal('modalChangelog');return false" style="color:var(--accent);text-decoration:none" title="Ver changelog">v3.37.34</a></small>
+    <h1><span>ARCKHÉ</span> Lives & Clips <small style="font-size:0.5em;color:var(--muted)">- <span id="instanceName"></span> <a href="#" onclick="openModal('modalChangelog');return false" style="color:var(--accent);text-decoration:none" title="Ver changelog">v3.37.34</a></small>
       <span id="headerCanais" style="display:block;font-size:0.4em;font-weight:normal;margin-top:4px"></span>
     </h1>
     <div class="header-actions">
@@ -1031,7 +1031,7 @@
               <option value="kie">Kie.ai</option>
               <option value="minimax">MiniMax</option>
               <option value="google">Google Imagen</option>
-              <option value="local">Local (inemaimg)</option>
+              <option value="local">Local (ARCKHÉimg)</option>
             </select>
           </div>
         </div>
@@ -1041,7 +1041,7 @@
         <input type="hidden" id="cfgOpenrouterApiKey">
         <input type="hidden" id="cfgThumbApiKey">
         <input type="hidden" id="cfgKieApiKey">
-        <input type="hidden" id="cfgInemaimgUrl">
+        <input type="hidden" id="cfgARCKHÉimgUrl">
         <input type="hidden" id="cfgAiModel">
         <div style="margin-top:12px;padding:10px;background:rgba(99,102,241,0.06);border:1px solid var(--border);border-radius:8px;">
           <label style="font-weight:600;font-size:0.8rem;margin-bottom:8px;display:block;">LLM para gerar prompt (tenta na ordem, fallback local se todos falharem)</label>
@@ -1099,7 +1099,7 @@
           </div>
           <div class="config-field">
             <label>Texto da Marca</label>
-            <input type="text" id="cfgThumbBrand" value="INEMA TDS" placeholder="INEMA TDS">
+            <input type="text" id="cfgThumbBrand" value="ARCKHÉ TDS" placeholder="ARCKHÉ TDS">
           </div>
         </div>
         <div class="config-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-top:8px;">
@@ -1205,7 +1205,7 @@
           <button class="small preset-btn" data-preset="minimal" onclick="applyThumbPreset('minimal')" style="padding:4px 10px;font-size:0.75em;background:#fafafa;color:#222;border:1px solid #ccc;">Minimal</button>
         </div>
         <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">
-          <button class="small preset-btn" data-preset="cinematic" onclick="applyThumbPreset('cinematic')" style="padding:4px 10px;font-size:0.75em;background:#0D0D1A;color:#F5A623;border:1px solid #F5A623;">Cinematic</button>
+          <button class="small preset-btn" data-preset="cARCKHÉtic" onclick="applyThumbPreset('cARCKHÉtic')" style="padding:4px 10px;font-size:0.75em;background:#0D0D1A;color:#F5A623;border:1px solid #F5A623;">CARCKHÉtic</button>
           <button class="small preset-btn" data-preset="gradient" onclick="applyThumbPreset('gradient')" style="padding:4px 10px;font-size:0.75em;background:#0F0F0F;color:#BF00FF;border:1px solid #8B00FF;">Gradient</button>
           <button class="small preset-btn" data-preset="splitscreen" onclick="applyThumbPreset('splitscreen')" style="padding:4px 10px;font-size:0.75em;background:linear-gradient(90deg,#E63946 50%,#1D3557 50%);color:#fff;border:1px solid #fff;">Split</button>
           <button class="small preset-btn" data-preset="colorpop" onclick="applyThumbPreset('colorpop')" style="padding:4px 10px;font-size:0.75em;background:#222;color:#FF1C1C;border:1px solid #FF1C1C;">ColorPop</button>
@@ -1436,7 +1436,7 @@
         <div class="config-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
           <div class="config-field">
             <label>Texto da marca</label>
-            <input type="text" id="cfgDesignBrand" value="INEMA TDS" placeholder="INEMA TDS">
+            <input type="text" id="cfgDesignBrand" value="ARCKHÉ TDS" placeholder="ARCKHÉ TDS">
             <div class="hint">Nome exibido no canto da thumbnail</div>
           </div>
           <div class="config-field">
@@ -1494,7 +1494,7 @@
           <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><button class="small preset-btn" data-preset="minimal" onclick="applyThumbPreset('minimal')" style="padding:3px 8px;font-size:0.7em;background:#fafafa;color:#222;border:1px solid #ccc;">Minimal</button><input type="checkbox" class="random-preset" data-preset="minimal" title="Random"></div>
         </div>
         <div style="display:flex;gap:3px;flex-wrap:wrap;margin-bottom:6px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><button class="small preset-btn" data-preset="cinematic" onclick="applyThumbPreset('cinematic')" style="padding:3px 8px;font-size:0.7em;background:#0D0D1A;color:#F5A623;border:1px solid #F5A623;">Cinematic</button><input type="checkbox" class="random-preset" data-preset="cinematic" title="Random"></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><button class="small preset-btn" data-preset="cARCKHÉtic" onclick="applyThumbPreset('cARCKHÉtic')" style="padding:3px 8px;font-size:0.7em;background:#0D0D1A;color:#F5A623;border:1px solid #F5A623;">CARCKHÉtic</button><input type="checkbox" class="random-preset" data-preset="cARCKHÉtic" title="Random"></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><button class="small preset-btn" data-preset="gradient" onclick="applyThumbPreset('gradient')" style="padding:3px 8px;font-size:0.7em;background:#0F0F0F;color:#BF00FF;border:1px solid #8B00FF;">Gradient</button><input type="checkbox" class="random-preset" data-preset="gradient" title="Random"></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><button class="small preset-btn" data-preset="splitscreen" onclick="applyThumbPreset('splitscreen')" style="padding:3px 8px;font-size:0.7em;background:linear-gradient(90deg,#E63946 50%,#1D3557 50%);color:#fff;border:1px solid #fff;">Split</button><input type="checkbox" class="random-preset" data-preset="splitscreen" title="Random"></div>
           <div style="display:flex;flex-direction:column;align-items:center;gap:1px;"><button class="small preset-btn" data-preset="colorpop" onclick="applyThumbPreset('colorpop')" style="padding:3px 8px;font-size:0.7em;background:#222;color:#FF1C1C;border:1px solid #FF1C1C;">ColorPop</button><input type="checkbox" class="random-preset" data-preset="colorpop" title="Random"></div>
@@ -1633,7 +1633,7 @@
     <div class="config-tab-content" id="cfgTab_enrich">
       <div class="config-section">
         <h3>Enriquecer Lives</h3>
-        <p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Lives sem titulo ou com titulo generico "INEMA" recebem titulo, descricao e thumbnail automaticamente via IA. Lives com titulo proprio mas sem descricao no YouTube recebem so a descricao.</p>
+        <p style="color:var(--muted);font-size:0.82em;margin-bottom:12px">Lives sem titulo ou com titulo generico "ARCKHÉ" recebem titulo, descricao e thumbnail automaticamente via IA. Lives com titulo proprio mas sem descricao no YouTube recebem so a descricao.</p>
         <div class="config-grid" style="grid-template-columns: 1fr 1fr 1fr;">
           <div class="config-field">
             <label>Enrich automatico</label>
@@ -2605,7 +2605,7 @@ function updateThumbFields() {
   const container = document.getElementById('thumbFieldsExtra');
   const thumbH = document.getElementById('cfgThumbApiKey');
   const kieH = document.getElementById('cfgKieApiKey');
-  const inemaH = document.getElementById('cfgInemaimgUrl');
+  const ARCKHÉH = document.getElementById('cfgARCKHÉimgUrl');
 
   const providerMap = {
     'agnes': {id: null, label: 'Agnes: chave lida em runtime de ~/projetos/agnes-nei/.env — nada a preencher aqui', placeholder: '', src: thumbH,
@@ -2616,7 +2616,7 @@ function updateThumbFields() {
       models: 'image-01 (unico modelo)'},
     'google': {id: '', label: '', placeholder: '', src: null,
       models: 'imagen-4.0-fast-generate-001, imagen-4.0-generate-001'},
-    'local': {id: 'cfgInemaimgUrl', label: 'URL inemaimg', placeholder: 'http://localhost:8000', src: inemaH,
+    'local': {id: 'cfgARCKHÉimgUrl', label: 'URL ARCKHÉimg', placeholder: 'http://localhost:8000', src: ARCKHÉH,
       models: 'flux2-klein, flux2-dev, qwen-edit-2511, ernie, sdxl, sd15'}
   };
   const p = providerMap[provider] || providerMap['agnes'];
@@ -2718,28 +2718,28 @@ async function previewDesign(btn, bgType) {
 
 // Presets default (hardcoded)
 const defaultPresets = {
-  premium: { font: 'montserrat-extrabold', fontSize: 82, lastLineScale: 15, lineHeight: 90, tracking: 'tight', case: 'upper', textColor: '#F5F3EE', highlightColor: '#D9B65B', highlightEnabled: 'true', accentColor: '#D9B65B', shadowType: 'blur', shadowColor: '#000000', shadowSize: 8, shadowOpacity: 180, gradient: 'top-left', gradientOpacity: 160, gradientCoverage: 40, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 26, brandColor: '#D9B65B', brandPosition: 'bottom-left', position: 'top-left' },
-  youtube: { font: 'anton', fontSize: 90, lastLineScale: 0, lineHeight: 96, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFF00', highlightEnabled: 'true', accentColor: '#FF0000', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'INEMA TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FF0000', brandPosition: 'bottom-left', position: 'center-left' },
-  clean: { font: 'montserrat-extrabold', fontSize: 76, lastLineScale: 0, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFFFF', highlightEnabled: 'false', accentColor: '#6366F1', shadowType: 'blur', shadowColor: '#000000', shadowSize: 6, shadowOpacity: 150, gradient: 'left', gradientOpacity: 120, gradientCoverage: 35, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#6366F1', brandPosition: 'bottom-left', position: 'top-left' },
-  neon: { font: 'bebas-neue', fontSize: 88, lastLineScale: 10, lineHeight: 92, tracking: 'normal', case: 'upper', textColor: '#00F5FF', highlightColor: '#FF00FF', highlightEnabled: 'true', accentColor: '#00F5FF', shadowType: 'blur', shadowColor: '#00F5FF', shadowSize: 10, shadowOpacity: 100, gradient: 'top-left', gradientOpacity: 180, gradientCoverage: 45, brand: 'INEMA TDS', brandFont: 'bebas-neue', brandSize: 28, brandColor: '#00F5FF', brandPosition: 'bottom-left', position: 'top-left' },
-  fallback: { font: 'montserrat-extrabold', fontSize: 72, lastLineScale: 0, lineHeight: 84, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFFFF', highlightEnabled: 'false', accentColor: '#6366F1', shadowType: 'outline', shadowColor: '#000000', shadowSize: 3, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'INEMA TDS', brandFont: 'dejavu', brandSize: 24, brandColor: '#6366F1', brandPosition: 'bottom-left', position: 'top-left' },
-  mrbeast: { font: 'anton', fontSize: 100, lastLineScale: 0, lineHeight: 105, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFD700', highlightEnabled: 'true', accentColor: '#FFD700', shadowType: 'outline', shadowColor: '#000000', shadowSize: 5, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'INEMA TDS', brandFont: 'anton', brandSize: 30, brandColor: '#FFD700', brandPosition: 'bottom-left', position: 'center-left' },
-  techreview: { font: 'montserrat-black', fontSize: 78, lastLineScale: 10, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#E3F2FD', highlightColor: '#4FC3F7', highlightEnabled: 'true', accentColor: '#4FC3F7', shadowType: 'blur', shadowColor: '#0D47A1', shadowSize: 8, shadowOpacity: 160, gradient: 'top-left', gradientOpacity: 150, gradientCoverage: 45, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#4FC3F7', brandPosition: 'bottom-left', position: 'top-left' },
-  tutorial: { font: 'montserrat-extrabold', fontSize: 80, lastLineScale: 0, lineHeight: 90, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#4CAF50', highlightEnabled: 'true', accentColor: '#4CAF50', shadowType: 'outline', shadowColor: '#1B5E20', shadowSize: 3, shadowOpacity: 220, gradient: 'top', gradientOpacity: 140, gradientCoverage: 35, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 26, brandColor: '#4CAF50', brandPosition: 'bottom-left', position: 'top-left' },
-  breaking: { font: 'anton', fontSize: 94, lastLineScale: 0, lineHeight: 100, tracking: 'normal', case: 'upper', textColor: '#FFEB3B', highlightColor: '#FF5722', highlightEnabled: 'true', accentColor: '#FF5722', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 255, gradient: 'full-bottom', gradientOpacity: 200, gradientCoverage: 50, brand: 'INEMA TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FFEB3B', brandPosition: 'bottom-left', position: 'bottom-left' },
-  minimal: { font: 'montserrat-extrabold', fontSize: 68, lastLineScale: 0, lineHeight: 80, tracking: 'very-tight', case: 'upper', textColor: '#1A1A1A', highlightColor: '#1A1A1A', highlightEnabled: 'false', accentColor: '#E0E0E0', shadowType: 'none', shadowColor: '#000000', shadowSize: 0, shadowOpacity: 0, gradient: 'left', gradientOpacity: 200, gradientCoverage: 50, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 22, brandColor: '#9E9E9E', brandPosition: 'bottom-left', position: 'center-left' },
-  cinematic: { font: 'montserrat-black', fontSize: 80, lastLineScale: 0, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#F5A623', highlightColor: '#00C2C7', highlightEnabled: 'true', accentColor: '#F5A623', shadowType: 'blur', shadowColor: '#000000', shadowSize: 10, shadowOpacity: 200, gradient: 'top-left', gradientOpacity: 180, gradientCoverage: 50, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#F5A623', brandPosition: 'bottom-left', position: 'bottom-left' },
-  gradient: { font: 'montserrat-black', fontSize: 84, lastLineScale: 0, lineHeight: 92, tracking: 'tight', case: 'upper', textColor: '#BF00FF', highlightColor: '#FF007F', highlightEnabled: 'true', accentColor: '#8B00FF', shadowType: 'blur', shadowColor: '#4A0080', shadowSize: 8, shadowOpacity: 150, gradient: 'top-left', gradientOpacity: 160, gradientCoverage: 40, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#BF00FF', brandPosition: 'bottom-left', position: 'top-left' },
-  splitscreen: { font: 'anton', fontSize: 88, lastLineScale: 0, lineHeight: 94, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFE135', highlightEnabled: 'false', accentColor: '#FFFFFF', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'INEMA TDS', brandFont: 'anton', brandSize: 26, brandColor: '#FFFFFF', brandPosition: 'bottom-left', position: 'center' },
-  colorpop: { font: 'montserrat-extrabold', fontSize: 78, lastLineScale: 0, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#FF1C1C', highlightColor: '#FFFFFF', highlightEnabled: 'true', accentColor: '#FF1C1C', shadowType: 'outline', shadowColor: '#000000', shadowSize: 3, shadowOpacity: 200, gradient: 'left', gradientOpacity: 140, gradientCoverage: 40, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#FF1C1C', brandPosition: 'bottom-left', position: 'top-left' },
-  retro: { font: 'dejavu', fontSize: 74, lastLineScale: 0, lineHeight: 86, tracking: 'normal', case: 'upper', textColor: '#F2E8D5', highlightColor: '#C45E26', highlightEnabled: 'true', accentColor: '#C45E26', shadowType: 'outline', shadowColor: '#3D2B1F', shadowSize: 3, shadowOpacity: 200, gradient: 'top-left', gradientOpacity: 120, gradientCoverage: 35, brand: 'INEMA TDS', brandFont: 'dejavu', brandSize: 24, brandColor: '#C45E26', brandPosition: 'bottom-left', position: 'top-left' },
-  '3dextrude': { font: 'anton', fontSize: 96, lastLineScale: 0, lineHeight: 102, tracking: 'normal', case: 'upper', textColor: '#FFD700', highlightColor: '#FFD700', highlightEnabled: 'false', accentColor: '#FFD700', shadowType: 'outline', shadowColor: '#4A2C00', shadowSize: 5, shadowOpacity: 255, gradient: 'top-left', gradientOpacity: 180, gradientCoverage: 45, brand: 'INEMA TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FFD700', brandPosition: 'bottom-left', position: 'center-left' },
-  glassmorphism: { font: 'montserrat-extrabold', fontSize: 74, lastLineScale: 0, lineHeight: 86, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#E0E0FF', highlightEnabled: 'false', accentColor: '#A855F7', shadowType: 'blur', shadowColor: '#3B82F6', shadowSize: 6, shadowOpacity: 80, gradient: 'top-left', gradientOpacity: 100, gradientCoverage: 50, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 22, brandColor: '#A855F7', brandPosition: 'bottom-left', position: 'center-left' },
-  darkacademia: { font: 'dejavu', fontSize: 72, lastLineScale: 10, lineHeight: 84, tracking: 'normal', case: 'upper', textColor: '#D4A574', highlightColor: '#F2E8D5', highlightEnabled: 'true', accentColor: '#8B6F47', shadowType: 'blur', shadowColor: '#1A0E08', shadowSize: 8, shadowOpacity: 180, gradient: 'top-left', gradientOpacity: 170, gradientCoverage: 50, brand: 'INEMA TDS', brandFont: 'dejavu', brandSize: 22, brandColor: '#8B6F47', brandPosition: 'bottom-left', position: 'top-left' },
-  boldoutline: { font: 'anton', fontSize: 92, lastLineScale: 0, lineHeight: 98, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFFFF', highlightEnabled: 'false', accentColor: '#FFFFFF', shadowType: 'outline', shadowColor: '#000000', shadowSize: 6, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'INEMA TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FFFFFF', brandPosition: 'bottom-left', position: 'center-left' },
-  elegantdark: { font: 'montserrat-extrabold', fontSize: 76, lastLineScale: 15, lineHeight: 86, tracking: 'tight', case: 'upper', textColor: '#C9B37E', highlightColor: '#FFFFFF', highlightEnabled: 'true', accentColor: '#C9B37E', shadowType: 'blur', shadowColor: '#000000', shadowSize: 8, shadowOpacity: 190, gradient: 'top-left', gradientOpacity: 170, gradientCoverage: 45, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#C9B37E', brandPosition: 'bottom-left', position: 'top-left' },
-  tiktok: { font: 'montserrat-extrabold', fontSize: 64, lastLineScale: 0, lineHeight: 76, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FE2C55', highlightEnabled: 'true', accentColor: '#25F4EE', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 220, gradient: 'top', gradientOpacity: 180, gradientCoverage: 50, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 22, brandColor: '#FE2C55', brandPosition: 'bottom-left', position: 'center-left', thumbWidth: 1280, thumbHeight: 720 },
-  stories: { font: 'montserrat-extrabold', fontSize: 56, lastLineScale: 0, lineHeight: 68, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FF6B6B', highlightEnabled: 'true', accentColor: '#FF6B6B', shadowType: 'blur', shadowColor: '#000000', shadowSize: 8, shadowOpacity: 200, gradient: 'top', gradientOpacity: 200, gradientCoverage: 60, brand: 'INEMA TDS', brandFont: 'montserrat-extrabold', brandSize: 20, brandColor: '#FF6B6B', brandPosition: 'bottom-left', position: 'center-left', thumbWidth: 1080, thumbHeight: 1920 }
+  premium: { font: 'montserrat-extrabold', fontSize: 82, lastLineScale: 15, lineHeight: 90, tracking: 'tight', case: 'upper', textColor: '#F5F3EE', highlightColor: '#D9B65B', highlightEnabled: 'true', accentColor: '#D9B65B', shadowType: 'blur', shadowColor: '#000000', shadowSize: 8, shadowOpacity: 180, gradient: 'top-left', gradientOpacity: 160, gradientCoverage: 40, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 26, brandColor: '#D9B65B', brandPosition: 'bottom-left', position: 'top-left' },
+  youtube: { font: 'anton', fontSize: 90, lastLineScale: 0, lineHeight: 96, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFF00', highlightEnabled: 'true', accentColor: '#FF0000', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'ARCKHÉ TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FF0000', brandPosition: 'bottom-left', position: 'center-left' },
+  clean: { font: 'montserrat-extrabold', fontSize: 76, lastLineScale: 0, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFFFF', highlightEnabled: 'false', accentColor: '#6366F1', shadowType: 'blur', shadowColor: '#000000', shadowSize: 6, shadowOpacity: 150, gradient: 'left', gradientOpacity: 120, gradientCoverage: 35, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#6366F1', brandPosition: 'bottom-left', position: 'top-left' },
+  neon: { font: 'bebas-neue', fontSize: 88, lastLineScale: 10, lineHeight: 92, tracking: 'normal', case: 'upper', textColor: '#00F5FF', highlightColor: '#FF00FF', highlightEnabled: 'true', accentColor: '#00F5FF', shadowType: 'blur', shadowColor: '#00F5FF', shadowSize: 10, shadowOpacity: 100, gradient: 'top-left', gradientOpacity: 180, gradientCoverage: 45, brand: 'ARCKHÉ TDS', brandFont: 'bebas-neue', brandSize: 28, brandColor: '#00F5FF', brandPosition: 'bottom-left', position: 'top-left' },
+  fallback: { font: 'montserrat-extrabold', fontSize: 72, lastLineScale: 0, lineHeight: 84, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFFFF', highlightEnabled: 'false', accentColor: '#6366F1', shadowType: 'outline', shadowColor: '#000000', shadowSize: 3, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'ARCKHÉ TDS', brandFont: 'dejavu', brandSize: 24, brandColor: '#6366F1', brandPosition: 'bottom-left', position: 'top-left' },
+  mrbeast: { font: 'anton', fontSize: 100, lastLineScale: 0, lineHeight: 105, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFD700', highlightEnabled: 'true', accentColor: '#FFD700', shadowType: 'outline', shadowColor: '#000000', shadowSize: 5, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'ARCKHÉ TDS', brandFont: 'anton', brandSize: 30, brandColor: '#FFD700', brandPosition: 'bottom-left', position: 'center-left' },
+  techreview: { font: 'montserrat-black', fontSize: 78, lastLineScale: 10, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#E3F2FD', highlightColor: '#4FC3F7', highlightEnabled: 'true', accentColor: '#4FC3F7', shadowType: 'blur', shadowColor: '#0D47A1', shadowSize: 8, shadowOpacity: 160, gradient: 'top-left', gradientOpacity: 150, gradientCoverage: 45, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#4FC3F7', brandPosition: 'bottom-left', position: 'top-left' },
+  tutorial: { font: 'montserrat-extrabold', fontSize: 80, lastLineScale: 0, lineHeight: 90, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#4CAF50', highlightEnabled: 'true', accentColor: '#4CAF50', shadowType: 'outline', shadowColor: '#1B5E20', shadowSize: 3, shadowOpacity: 220, gradient: 'top', gradientOpacity: 140, gradientCoverage: 35, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 26, brandColor: '#4CAF50', brandPosition: 'bottom-left', position: 'top-left' },
+  breaking: { font: 'anton', fontSize: 94, lastLineScale: 0, lineHeight: 100, tracking: 'normal', case: 'upper', textColor: '#FFEB3B', highlightColor: '#FF5722', highlightEnabled: 'true', accentColor: '#FF5722', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 255, gradient: 'full-bottom', gradientOpacity: 200, gradientCoverage: 50, brand: 'ARCKHÉ TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FFEB3B', brandPosition: 'bottom-left', position: 'bottom-left' },
+  minimal: { font: 'montserrat-extrabold', fontSize: 68, lastLineScale: 0, lineHeight: 80, tracking: 'very-tight', case: 'upper', textColor: '#1A1A1A', highlightColor: '#1A1A1A', highlightEnabled: 'false', accentColor: '#E0E0E0', shadowType: 'none', shadowColor: '#000000', shadowSize: 0, shadowOpacity: 0, gradient: 'left', gradientOpacity: 200, gradientCoverage: 50, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 22, brandColor: '#9E9E9E', brandPosition: 'bottom-left', position: 'center-left' },
+  cARCKHÉtic: { font: 'montserrat-black', fontSize: 80, lastLineScale: 0, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#F5A623', highlightColor: '#00C2C7', highlightEnabled: 'true', accentColor: '#F5A623', shadowType: 'blur', shadowColor: '#000000', shadowSize: 10, shadowOpacity: 200, gradient: 'top-left', gradientOpacity: 180, gradientCoverage: 50, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#F5A623', brandPosition: 'bottom-left', position: 'bottom-left' },
+  gradient: { font: 'montserrat-black', fontSize: 84, lastLineScale: 0, lineHeight: 92, tracking: 'tight', case: 'upper', textColor: '#BF00FF', highlightColor: '#FF007F', highlightEnabled: 'true', accentColor: '#8B00FF', shadowType: 'blur', shadowColor: '#4A0080', shadowSize: 8, shadowOpacity: 150, gradient: 'top-left', gradientOpacity: 160, gradientCoverage: 40, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#BF00FF', brandPosition: 'bottom-left', position: 'top-left' },
+  splitscreen: { font: 'anton', fontSize: 88, lastLineScale: 0, lineHeight: 94, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFE135', highlightEnabled: 'false', accentColor: '#FFFFFF', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'ARCKHÉ TDS', brandFont: 'anton', brandSize: 26, brandColor: '#FFFFFF', brandPosition: 'bottom-left', position: 'center' },
+  colorpop: { font: 'montserrat-extrabold', fontSize: 78, lastLineScale: 0, lineHeight: 88, tracking: 'tight', case: 'upper', textColor: '#FF1C1C', highlightColor: '#FFFFFF', highlightEnabled: 'true', accentColor: '#FF1C1C', shadowType: 'outline', shadowColor: '#000000', shadowSize: 3, shadowOpacity: 200, gradient: 'left', gradientOpacity: 140, gradientCoverage: 40, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#FF1C1C', brandPosition: 'bottom-left', position: 'top-left' },
+  retro: { font: 'dejavu', fontSize: 74, lastLineScale: 0, lineHeight: 86, tracking: 'normal', case: 'upper', textColor: '#F2E8D5', highlightColor: '#C45E26', highlightEnabled: 'true', accentColor: '#C45E26', shadowType: 'outline', shadowColor: '#3D2B1F', shadowSize: 3, shadowOpacity: 200, gradient: 'top-left', gradientOpacity: 120, gradientCoverage: 35, brand: 'ARCKHÉ TDS', brandFont: 'dejavu', brandSize: 24, brandColor: '#C45E26', brandPosition: 'bottom-left', position: 'top-left' },
+  '3dextrude': { font: 'anton', fontSize: 96, lastLineScale: 0, lineHeight: 102, tracking: 'normal', case: 'upper', textColor: '#FFD700', highlightColor: '#FFD700', highlightEnabled: 'false', accentColor: '#FFD700', shadowType: 'outline', shadowColor: '#4A2C00', shadowSize: 5, shadowOpacity: 255, gradient: 'top-left', gradientOpacity: 180, gradientCoverage: 45, brand: 'ARCKHÉ TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FFD700', brandPosition: 'bottom-left', position: 'center-left' },
+  glassmorphism: { font: 'montserrat-extrabold', fontSize: 74, lastLineScale: 0, lineHeight: 86, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#E0E0FF', highlightEnabled: 'false', accentColor: '#A855F7', shadowType: 'blur', shadowColor: '#3B82F6', shadowSize: 6, shadowOpacity: 80, gradient: 'top-left', gradientOpacity: 100, gradientCoverage: 50, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 22, brandColor: '#A855F7', brandPosition: 'bottom-left', position: 'center-left' },
+  darkacademia: { font: 'dejavu', fontSize: 72, lastLineScale: 10, lineHeight: 84, tracking: 'normal', case: 'upper', textColor: '#D4A574', highlightColor: '#F2E8D5', highlightEnabled: 'true', accentColor: '#8B6F47', shadowType: 'blur', shadowColor: '#1A0E08', shadowSize: 8, shadowOpacity: 180, gradient: 'top-left', gradientOpacity: 170, gradientCoverage: 50, brand: 'ARCKHÉ TDS', brandFont: 'dejavu', brandSize: 22, brandColor: '#8B6F47', brandPosition: 'bottom-left', position: 'top-left' },
+  boldoutline: { font: 'anton', fontSize: 92, lastLineScale: 0, lineHeight: 98, tracking: 'normal', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FFFFFF', highlightEnabled: 'false', accentColor: '#FFFFFF', shadowType: 'outline', shadowColor: '#000000', shadowSize: 6, shadowOpacity: 255, gradient: 'none', gradientOpacity: 0, gradientCoverage: 0, brand: 'ARCKHÉ TDS', brandFont: 'anton', brandSize: 28, brandColor: '#FFFFFF', brandPosition: 'bottom-left', position: 'center-left' },
+  elegantdark: { font: 'montserrat-extrabold', fontSize: 76, lastLineScale: 15, lineHeight: 86, tracking: 'tight', case: 'upper', textColor: '#C9B37E', highlightColor: '#FFFFFF', highlightEnabled: 'true', accentColor: '#C9B37E', shadowType: 'blur', shadowColor: '#000000', shadowSize: 8, shadowOpacity: 190, gradient: 'top-left', gradientOpacity: 170, gradientCoverage: 45, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 24, brandColor: '#C9B37E', brandPosition: 'bottom-left', position: 'top-left' },
+  tiktok: { font: 'montserrat-extrabold', fontSize: 64, lastLineScale: 0, lineHeight: 76, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FE2C55', highlightEnabled: 'true', accentColor: '#25F4EE', shadowType: 'outline', shadowColor: '#000000', shadowSize: 4, shadowOpacity: 220, gradient: 'top', gradientOpacity: 180, gradientCoverage: 50, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 22, brandColor: '#FE2C55', brandPosition: 'bottom-left', position: 'center-left', thumbWidth: 1280, thumbHeight: 720 },
+  stories: { font: 'montserrat-extrabold', fontSize: 56, lastLineScale: 0, lineHeight: 68, tracking: 'tight', case: 'upper', textColor: '#FFFFFF', highlightColor: '#FF6B6B', highlightEnabled: 'true', accentColor: '#FF6B6B', shadowType: 'blur', shadowColor: '#000000', shadowSize: 8, shadowOpacity: 200, gradient: 'top', gradientOpacity: 200, gradientCoverage: 60, brand: 'ARCKHÉ TDS', brandFont: 'montserrat-extrabold', brandSize: 20, brandColor: '#FF6B6B', brandPosition: 'bottom-left', position: 'center-left', thumbWidth: 1080, thumbHeight: 1920 }
 };
 
 function getPreset(name) {
@@ -3470,7 +3470,7 @@ async function loadConfig() {
   setVal('cfgThumbApiKey', c.thumb_api_key);
   setVal('cfgOpenrouterApiKey', c.openrouter_api_key);
   setVal('cfgKieApiKey', c.kie_api_key);
-  setVal('cfgInemaimgUrl', c.inemaimg_url);
+  setVal('cfgARCKHÉimgUrl', c.ARCKHÉimg_url);
 
   // Analise IA
   setVal('cfgAiMode', c.ai_mode);
@@ -3573,7 +3573,7 @@ async function loadConfig() {
     const genericas = (livesData.lives || []).filter(l =>
       !(l.video_id || '').startsWith('import_') &&
       (
-        (['', 'INEMA'].includes((l.titulo || '').trim().toUpperCase()) && l.observacoes !== 'enriquecida') ||
+        (['', 'ARCKHÉ'].includes((l.titulo || '').trim().toUpperCase()) && l.observacoes !== 'enriquecida') ||
         l.observacoes === 'refazer_enrich'
       )
     );
@@ -3680,7 +3680,7 @@ function saveApis(btn) {
       thumb_api_key: document.getElementById('cfgThumbApiKey').value,
       openrouter_api_key: document.getElementById('cfgOpenrouterApiKey').value,
       kie_api_key: document.getElementById('cfgKieApiKey').value,
-      inemaimg_url: document.getElementById('cfgInemaimgUrl').value,
+      ARCKHÉimg_url: document.getElementById('cfgARCKHÉimgUrl').value,
       thumb_mode: document.getElementById('cfgThumbMode').value,
       thumb_image_provider: document.getElementById('cfgThumbImageProvider').value,
       thumb_model: document.getElementById('cfgThumbModel').value,
@@ -4395,7 +4395,7 @@ loadAll();
       <h3 style="color:var(--accent);margin-bottom:8px">v3.26.29</h3>
       <p style="color:var(--muted);margin-bottom:4px"><strong>Feature:</strong></p>
       <ul style="margin:0 0 16px 20px;color:var(--text)">
-        <li>Novo provider de imagem "Local (inemaimg)": usa API local (FastAPI) com modelos flux2-klein/flux2-dev/qwen-edit-2511/ernie/sdxl/sd15. URL configuravel por instancia (default http://localhost:8000). Mesmo padrao do imkt4/timesmkt3.</li>
+        <li>Novo provider de imagem "Local (ARCKHÉimg)": usa API local (FastAPI) com modelos flux2-klein/flux2-dev/qwen-edit-2511/ernie/sdxl/sd15. URL configuravel por instancia (default http://localhost:8000). Mesmo padrao do imkt4/timesmkt3.</li>
       </ul>
       <h3 style="color:var(--accent);margin-bottom:8px">v3.25.28</h3>
       <p style="color:var(--muted);margin-bottom:4px"><strong>Fixes:</strong></p>
@@ -4458,7 +4458,7 @@ loadAll();
       <h3 style="color:var(--accent);margin-bottom:8px">v3.20.25</h3>
       <p style="color:var(--muted);margin-bottom:4px"><strong>Features:</strong></p>
       <ul style="margin:0 0 16px 20px;color:var(--text)">
-        <li>Enrich Lives: lives com titulo generico "INEMA" recebem titulo, descricao e thumbnail via IA automaticamente</li>
+        <li>Enrich Lives: lives com titulo generico "ARCKHÉ" recebem titulo, descricao e thumbnail via IA automaticamente</li>
         <li>Nova aba "Enrich Lives" na Config: toggle, horarios, max por rodada, prompt editavel, botao "Enriquecer Agora"</li>
         <li>Prompt configuravel para geracao de titulo e descricao (config/prompt_enrich.txt)</li>
         <li>Thumbnail gerada com imagem padrao + texto overlay (mesmo estilo dos clips)</li>
@@ -4490,7 +4490,7 @@ loadAll();
       <h3 style="color:var(--accent);margin-bottom:8px">v3.15.23</h3>
       <p style="color:var(--muted);margin-bottom:4px"><strong>Features:</strong></p>
       <ul style="margin:0 0 8px 20px;color:var(--text)">
-        <li>Design Thumb: aba completa com 20 presets (Premium, YouTube, Clean, Neon, MrBeast, Cinematic, Gradient, etc)</li>
+        <li>Design Thumb: aba completa com 20 presets (Premium, YouTube, Clean, Neon, MrBeast, CARCKHÉtic, Gradient, etc)</li>
         <li>Design Thumb: preview ao vivo (escuro/claro) com texto customizavel</li>
         <li>Design Thumb: random presets com checkbox (sorteia estilo a cada publicacao)</li>
         <li>Design Thumb: borda/stroke no titulo (cor, espessura, toggle)</li>
@@ -4569,7 +4569,7 @@ loadAll();
       <p style="color:var(--muted);margin-bottom:4px"><strong>Features:</strong></p>
       <ul style="margin:0 0 8px 20px;color:var(--text)">
         <li>Config isolado por projeto</li>
-        <li>Canal destino INEMA TIA + yt-auth</li>
+        <li>Canal destino ARCKHÉ TIA + yt-auth</li>
         <li>Thumbnails doc</li>
       </ul>
       <p style="color:var(--muted);margin-bottom:4px"><strong>Bugs corrigidos:</strong></p>

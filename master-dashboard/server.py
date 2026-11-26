@@ -53,7 +53,7 @@ TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '')
 
 import secrets as _sec
 
-_DASHBOARD_PASSWORD = os.environ.get('DASHBOARD_PASSWORD', 'Inema2026$$$')
+_DASHBOARD_PASSWORD = os.environ.get('DASHBOARD_PASSWORD', 'ARCKHÉ2026$$$')
 _VALID_SESSIONS = set()
 
 _LOGIN_HTML = '''<!doctype html>

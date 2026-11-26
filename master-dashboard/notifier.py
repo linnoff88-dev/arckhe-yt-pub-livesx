@@ -332,7 +332,7 @@ def _short_name(inst):
 
 
 def _canal_label(inst, cfg=None):
-    """'lives10 · INEMA Agentes' — instancia + nome do canal no YouTube."""
+    """'lives10 · ARCKHÉ Agentes' — instancia + nome do canal no YouTube."""
     curto = _short_name(inst)
     if cfg is None:
         cfg = _read_config(inst)
